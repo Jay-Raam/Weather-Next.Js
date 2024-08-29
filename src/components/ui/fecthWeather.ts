@@ -74,7 +74,7 @@ export interface WeatherDay {
 
 export const fetchWeatherData = async (location: string): Promise<WeatherData | null> => {
   const apiKey = "14c84b5056284c03b3e41509242908";
-  const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`;
+  const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`;
 
   try {
       const response = await fetch(url);
