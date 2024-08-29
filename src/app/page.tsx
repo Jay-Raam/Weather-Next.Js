@@ -1,113 +1,152 @@
+// import React from "react";
+import WeatherPage from "@/components/WeatherForMonth";
+import { fetchWeatherData } from "@/components/ui/fecthWeather";
+import Image000001 from "@/components/image/m2.webp";
+import Image000002 from "@/components/image/m3.jpeg";
+import Image000003 from "@/components/image/m4.webp";
+import Image000004 from "@/components/image/m5.jpeg";
+import Image000005 from "@/components/image/m6.jpeg";
+import Image000006 from "@/components/image/m7.jpeg";
+import Image000007 from "@/components/image/m8.jpeg";
 import Image from "next/image";
 
-export default function Home() {
+const london = "London";
+const India = "India";
+const Canada = "Canada";
+
+export default async function Home() {
+  const weather = await fetchWeatherData(london);
+  const weatherIndia = await fetchWeatherData(India);
+  const weatherCanada = await fetchWeatherData(Canada);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <>
+      <header className="flex justify-center items-center gap-4 flex-col h-[100vh]">
+        <h1 className="text-xl md:text-5xl font-bold">
+          Welcome to WeatherWise!
+        </h1>
+        <p>Your Ultimate Weather Companion</p>
+      </header>
+
+      <main className="weather">
+        <section className="flex justify-center items-center gap-4 flex-col h-[100vh] max-w-[1200px] mx-auto my-0">
+          <h1 className="text-xl md:text-5xl mb font-bold">Basic of Weather</h1>
+          <p className="text-center">
+            It encompasses a variety of phenomena, including temperature,
+            humidity, precipitation, wind, and atmospheric pressure. These
+            elements interact in complex ways to produce the diverse weather
+            patterns we experience.
+          </p>
+          <p className="text-center">
+            Weather is an ever-present, ever-changing aspect of our daily lives.
+            From the crisp bite of a winter morning to the balmy embrace of a
+            summer evening, our experiences are shaped significantly by the
+            atmospheric conditions around us. Understanding weather patterns not
+            only enriches our appreciation of the natural world but also helps
+            us make informed decisions about our activities and preparations.
+            And with the right tools, staying updated on current conditions has
+            never been easier.
+          </p>
+        </section>
+
+        <div className="image flex flex-col justify-center flex-wrap items-center max-w-[1300px] mx-auto my-0 mt-10 gap-5">
+          <h1 className="text-xl md:text-5xl mb font-bold">
+            Weather Collections
+          </h1>
+          <div className="image-collection flex justify-center flex-wrap items-center gap-5">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src={Image000001}
+              alt="weatherlogo"
+              width={300}
+              height={200}
+              quality={100}
+              className="w-[300px] md:w-[400px] h-auto"
             />
-          </a>
+            <Image
+              src={Image000002}
+              alt="weatherlogo"
+              width={300}
+              height={204}
+              quality={100}
+              className="w-[300px] md:w-[400px] h-auto"
+            />
+            <Image
+              src={Image000003}
+              alt="weatherlogo"
+              width={300}
+              height={200}
+              quality={100}
+              className="w-[300px] md:w-[400px] h-auto"
+            />
+            <Image
+              src={Image000004}
+              alt="weatherlogo"
+              width={300}
+              height={197}
+              quality={100}
+              className="w-[300px] md:w-[400px] h-auto"
+            />
+            <Image
+              src={Image000007}
+              alt="weatherlogo"
+              width={300}
+              height={450}
+              quality={100}
+              className="w-[300px] md:w-[400px] h-auto"
+            />
+            <Image
+              src={Image000006}
+              alt="weatherlogo"
+              width={300}
+              height={200}
+              quality={100}
+              className="w-[300px] md:w-[400px] h-auto"
+            />
+            <Image
+              src={Image000005}
+              alt="weatherlogo"
+              width={300}
+              height={200}
+              quality={100}
+              className="w-[300px] md:w-[400px] h-auto"
+            />
+          </div>
         </div>
-      </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
+        <section className="flex justify-center flex-col items-center gap-5 mt-10 h-auto md:h-[100vh]">
+          <h1 className="text-xl md:text-5xl mb font-bold">Weather Report</h1>
+          <div className="some-example flex justify-center items-center gap-5 flex-col md:flex-row">
+            <WeatherPage weather={weather} />
+            <WeatherPage weather={weatherIndia} />
+            <WeatherPage weather={weatherCanada} />
+          </div>
+        </section>
+      </main>
+      <footer className="bg-[#facc15]">
+        <div className="text-center py-4 text-black">
+          <h1>
+            <a
+              href="https://jayasriraam.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Jayasriraam
+            </a>
+          </h1>
+          <p className="text-sm">&copy; 2024 All rights reserved.</p>
+          <p>
+            Powered by
+            <a
+              href="https://www.weatherapi.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Free Weather API"
+            >
+              WeatherAPI.com
+            </a>
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        </div>
+      </footer>
+    </>
   );
 }
