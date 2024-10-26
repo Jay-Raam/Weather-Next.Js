@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC, useState } from "react";
-import Image0001 from "@/components/image/Group50.png";
 import Image0002 from "@/components/image/Group51.png";
 import DarkMode from "../ui/darkmode";
 import { AlignJustify } from "lucide-react";

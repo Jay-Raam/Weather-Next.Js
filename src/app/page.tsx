@@ -9,6 +9,7 @@ import Image000005 from "@/components/image/m6.jpeg";
 import Image000006 from "@/components/image/m7.jpeg";
 import Image000007 from "@/components/image/m8.jpeg";
 import Image from "next/image";
+import { TypingAnimation } from "@/components/ui/textAnimation";
 
 const london = "London";
 const India = "India";
@@ -22,15 +23,17 @@ export default async function Home() {
   return (
     <>
       <header className="flex justify-center items-center gap-4 flex-col h-[100vh]">
-        <h1 className="text-xl md:text-5xl font-bold">
-          Welcome to WeatherWise!
-        </h1>
+        <TypingAnimation
+          className="text-xl md:text-5xl font-bold"
+          text=" Welcome to WeatherWise!"
+        />
+
         <p>Your Ultimate Weather Companion</p>
       </header>
 
       <main className="weather">
-        <section className="flex justify-center items-center gap-4 flex-col h-[100vh] max-w-[1200px] mx-auto my-0">
-          <h1 className="text-xl md:text-5xl mb font-bold">Basic of Weather</h1>
+        <section className="flex justify-center items-center gap-8 flex-col h-[100vh] max-w-[1200px] mx-auto my-0">
+          <h1 className="text-xl md:text-5xl font-bold">Basic of Weather</h1>
           <p className="text-center">
             It encompasses a variety of phenomena, including temperature,
             humidity, precipitation, wind, and atmospheric pressure. These
@@ -49,7 +52,7 @@ export default async function Home() {
           </p>
         </section>
 
-        <div className="image flex flex-col justify-center flex-wrap items-center max-w-[1300px] mx-auto my-0 mt-10 gap-5">
+        <div className="image flex flex-col justify-center flex-wrap items-center max-w-[1300px] mx-auto my-0 mt-10 gap-10">
           <h1 className="text-xl md:text-5xl mb font-bold">
             Weather Collections
           </h1>
@@ -113,7 +116,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <section className="flex justify-center flex-col items-center gap-5 mt-10 h-auto md:h-[100vh]">
+        <section className="flex justify-center flex-col items-center gap-5 mt-10 h-auto md:h-[100vh] md:gap-10">
           <h1 className="text-xl md:text-5xl mb font-bold">Weather Report</h1>
           <div className="some-example flex justify-center items-center gap-5 flex-col md:flex-row">
             <WeatherPage weather={weather} />
@@ -122,6 +125,7 @@ export default async function Home() {
           </div>
         </section>
       </main>
+
       <footer className="bg-[#facc15]">
         <div className="text-center py-4 text-black">
           <h1>

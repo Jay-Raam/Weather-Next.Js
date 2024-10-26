@@ -8,8 +8,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
 
@@ -144,7 +142,7 @@ export default function HistoryData() {
             {weather.location.tz_id && <h3>{weather.location.tz_id}</h3>}
           </div>
           <div className="flex justify-evenly items-center max-w-[1550px] mx-auto my-0 flex-col lg:flex-row">
-            <div className="daily-summary flex flex-col items-center gap-4 mb-6 w-full lg:w-1/2">
+            <div className="daily-summary flex flex-col items-center gap-4 mb-6 w-full">
               <h3 className="text-center text-2xl font-bold mb-4">
                 Daily Summary
               </h3>
@@ -217,11 +215,11 @@ export default function HistoryData() {
                 </p>
               )}
             </div>
-            <div className="hour-data w-full lg:w-1/2">
+            <div className="hour-data w-full">
               <h3 className="text-center text-2xl font-bold mb-4">
                 Hourly Forecast
               </h3>
-              <Carousel className="w-[300px] md:w-[450px] max-w-[1550px] mx-auto">
+              <Carousel className="w-[280px] md:w-[450px] max-w-[1550px] mx-auto cursor-pointer">
                 <CarouselContent>
                   {weather.forecast.forecastday[0].hour.map((hour, index) => (
                     <CarouselItem key={index}>
@@ -250,8 +248,6 @@ export default function HistoryData() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
               </Carousel>
             </div>
           </div>
