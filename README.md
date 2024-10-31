@@ -1,4 +1,4 @@
-## Weatherwise — v1
+## Weather - Wise  v1
 Welcome to Weatherwise! I’m Jayasriraam, a front-end developer based in Chennai, and I’m thrilled to introduce you to my project. Weatherwise is a dynamic web application designed to provide users with accurate and up-to-date weather information. This project integrates a sleek, user-friendly interface with robust backend functionality to deliver an engaging weather experience.
 
 ## Tech Stack
